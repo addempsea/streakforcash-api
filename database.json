@@ -9,7 +9,7 @@
     "ENV": "SFC_DATABASE_URL"
   },
   "defaultEnv": {
-    "ENV": "SFC_NODE_ENV"
+    "ENV": "development"
   },
   "sql-file": true
 }
