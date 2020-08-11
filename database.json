@@ -1,4 +1,7 @@
 {
+  "defaultEnv": {
+    "ENV": "SFC_NODE_ENV"
+  },
   "development": {
     "ENV": "SFC_POSTGRES_DEV_URL"
   },
@@ -7,9 +10,6 @@
   },
   "production": {
     "ENV": "SFC_DATABASE_URL"
-  },
-  "defaultEnv": {
-    "ENV": "development"
   },
   "sql-file": true
 }
