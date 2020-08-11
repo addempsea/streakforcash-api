@@ -23,7 +23,7 @@
     "seed:reset": "npm run migrate reset:seeds",
     "lint": "eslint --ext .js ./",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+    "coverage": "nyc cat ./coverage/lcov.info | coveralls"
   },
   "author": "[addempsea, iamtope, teezyfortune]",
   "license": "ISC",
