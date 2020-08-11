@@ -22,8 +22,12 @@ after_script:
     - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 script:
-    - npm ci
+    - npm install
     - npm test
+
+cache:
+    directories:
+        - node_modules
 
 after_success:
     - npm run coveralls
