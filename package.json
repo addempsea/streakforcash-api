@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "cross-env SFC_NODE_ENV=test mocha -c -r esm test/**/*.test.js --timeout 12000 --exit",
+    "test": "cross-env SFC_NODE_ENV=test nyc --reporter=text --reporter=html mocha -c -r esm test/**/*.test.js --timeout 12000 --exit",
     "pretest": "cross-env SFC_NODE_ENV=test npm run migrate:reset && cross-env SFC_NODE_ENV=test npm run migrate up && npm run lint",
     "prestart": "cross-env SFC_NODE_ENV=production npm run migrate:up",
     "start": "node -r esm .",
@@ -21,7 +21,9 @@
     "seed:up": "npm run migrate up:seeds",
     "seed:down": "npm run migrate down:seeds",
     "seed:reset": "npm run migrate reset:seeds",
-    "lint": "eslint --ext .js ./"
+    "lint": "eslint --ext .js ./",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "author": "[addempsea, iamtope, teezyfortune]",
   "license": "ISC",
@@ -39,11 +41,13 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "coveralls": "^3.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
     "extend": "^3.0.2",
-    "mocha": "^7.1.1"
+    "mocha": "^7.1.1",
+    "nyc": "^15.1.0"
   },
   "dependencies": {
     "@hapi/joi": "^17.1.1",
