@@ -91,5 +91,7 @@ export default {
   REDIS_RUNNING: 'Redis server is running',
   SFC_RUNNING: 'SFC is running on PORT',
   USERNAME_ERROR: 'Username registered already',
-  GENERIC_ERROR: 'Sorry, something went wrong'
+  GENERIC_ERROR: 'Sorry, something went wrong',
+  CREATE_QUESTION_FAIL: 'Could not create question',
+  CREATE_CATEGORY_FAIL: 'Could not create category'
 };

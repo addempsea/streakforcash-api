@@ -32,7 +32,7 @@ const appConfig = (app) => {
   app.get('/', (req, res) => successResponse(res, { message: WELCOME }));
 
   // serves v1 api routes
-  // app.use(v1, apiV1Routes);
+  app.use(v1, apiV1Routes);
   // catches 404 errors and forwards them to error handlers
   app.use((req, res, next) => {
     next(notFoundApi);
