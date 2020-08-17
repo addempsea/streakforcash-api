@@ -28,6 +28,8 @@ const appConfig = (app) => {
   app.use(json());
   // adds middleware that parses requests with x-www-form-urlencoded data encoding
   app.use(urlencoded({ extended: true }));
+  // servers v1 api route
+  app.use(v1, apiV1Routes);
   // adds a heartbeat route for the culture
   app.get('/', (req, res) => successResponse(res, { message: WELCOME }));
 

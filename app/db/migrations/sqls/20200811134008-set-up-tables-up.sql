@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS question (
     end_time TIMESTAMPTZ  NOT NULL,
     map_heat sfc_map_heat_type,
     status sfc_question_status_type NOT NULL,
-    category_id INT REFERENCES category(id) NULL,
+    category_id INT REFERENCES category(id) NULL ,
     correct_answer INT,
     created_at TIMESTAMPTZ DEFAULT NOW(),
     updated_at TIMESTAMPTZ DEFAULT NOW()

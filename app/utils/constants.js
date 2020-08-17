@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import config from '../../config/env';
 
 const {
@@ -17,7 +18,7 @@ export default {
     'Permission denied. Current user does not have the required permission to access this resource.',
   INVALID_CREDENTIALS: 'Incorrect login details',
   ACCESS_REVOKED: 'Your access has been revoked',
-  EMAIL_CONFLICT: 'A user with your email already exists',
+  EMAIL_CONFLICT: 'A user with your email or username already exists',
   AUTH_REQUIRED: 'Access denied,a valid access token is required',
   '2HRS': 7200,
   '8HRS': 28800,
@@ -60,7 +61,7 @@ export default {
     'Error verifying existence of email, try again.',
   USER_NOT_FOUND_MSG: 'A USER with the id provided was not found',
   USER_NOT_FOUND: 'USER_NOT_FOUND',
-  CREATE_USER_SUCCESSFULLY: 'Successfully registered USER to FACILITY.',
+  CREATE_USER_SUCCESSFULLY: 'Successfully registered USER.',
   CREATE_USER_FAILED: 'Error registering USER',
   LOGIN_USER_SUCCESSFULLY: 'Successfully logged in user',
   FETCH_USERS_SUCCESSFULLY: 'Successfully retrieved users',
@@ -87,9 +88,10 @@ export default {
   ERROR_REMOVING_USER: 'Error removing USER from FACILITY',
   ROLE_NOT_SUFFICIENT_FACILITY:
     'You do not have sufficient permission to interact with this FACILITY resource',
-
   REDIS_RUNNING: 'Redis server is running',
   SFC_RUNNING: 'SFC is running on PORT',
   USERNAME_ERROR: 'Username registered already',
-  GENERIC_ERROR: 'Sorry, something went wrong'
+  GENERIC_ERROR: 'Sorry, something went wrong',
+  INVALID_TOKEN: 'Sorrry you have already confirmed your account',
+  USER_VERIFICATION_SUCCESS: 'Your account has been successfully verified'
 };

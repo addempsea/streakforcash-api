@@ -5,7 +5,8 @@ import production from './production';
 
 const {
   SFC_SECRET: SECRET,
-  SFC_NODE_ENV: NODE_ENV
+  SFC_NODE_ENV: NODE_ENV,
+  SENGRID_API_KEY: SENDGRID_KEY
 } = process.env;
 
 const currentEnv = {
@@ -19,5 +20,6 @@ export default {
   ...currentEnv,
   rootPath,
   SECRET,
+  SENDGRID_KEY,
   NODE_ENV
 };
