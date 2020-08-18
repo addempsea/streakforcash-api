@@ -36,8 +36,8 @@ class Helper {
    * @param {string} i - Short code required
    * @returns {String} - A unique string.
    */
-  static generateUniqueId(i) {
-    return `${i}/${Math.random().toString(10).substr(2, 5)}`;
+  static generateUniqueId() {
+    return `${Math.random().toString(10).substr(2, 10)}`;
   }
 
   /**
@@ -209,7 +209,7 @@ class Helper {
    */
   static successResponse(
     res,
-    { data, message = SUCCESS_RESPONSE, code = 200 }
+    { data, message = SUCCESS_RESPONSE, code = 200 || 201 }
   ) {
     return res.status(code).json({
       status: SUCCESS,
